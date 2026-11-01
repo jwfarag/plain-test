@@ -1,0 +1,2 @@
+A discount code can't bring the total below zero.
+Checkout fails with a clear error when the cart is empty.

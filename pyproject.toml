@@ -1,0 +1,28 @@
+[project]
+name = "plaintest"
+version = "0.0.1"
+description = "Plain-English descriptions -> Specs -> tests, with proof the tests check what was described."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6", "pytest>=8"]
+
+[project.optional-dependencies]
+anthropic = ["anthropic"]
+openai = ["openai"]
+
+[project.scripts]
+plaintest = "plaintest.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["plaintest*"]
+
+[tool.setuptools.package-data]
+plaintest = ["prompts/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
